@@ -27,7 +27,7 @@ function parseChatFile($filename){
             $first_message = true;
 
             while (($line = fgets($file_handle)) !== false){
-                $line_attributes = explode('-', ($line));
+                $line_attributes = stringSplit($line,":",3);
                 if(sizeof($line_attributes) > 0) {
                     $first_message = true;
                 }
